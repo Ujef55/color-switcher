@@ -1,33 +1,17 @@
-const buttons = document.querySelectorAll('.button'); 
+const colorButton = document.querySelector('#colorBtn');
+const refreshButton = document.querySelector('#refreshBtn');
 const body = document.querySelector('body');
 
-buttons.forEach( (btn) => {
-    btn.addEventListener('click', function(e) {
-        console.log(e);
-        console.log(e.target);
-        if(e.target.id === 'red') {
-            document.body.style.backgroundColor = e.target.id;
-            document.body.style.color = 'white';
-        } else if (e.target.id === 'green') {
-            document.body.style.backgroundColor = e.target.id;
-            document.body.style.color = 'black';
-        } else if (e.target.id === 'blue') {
-            document.body.style.backgroundColor = e.target.id;
-            document.body.style.color = 'white';
-        } else if (e.target.id === 'yellow') {
-            document.body.style.backgroundColor = e.target.id;
-            document.body.style.color = 'black'
-        } else if (e.target.id === 'white') {
-            document.body.style.backgroundColor = e.target.id;
-            document.body.style.color = 'black';
-        } else if (e.target.id === 'purple') {
-            document.body.style.backgroundColor = e.target.id;
-            document.body.style.color = 'white';
-        } else if (e.target.id === 'orange') {
-            document.body.style.backgroundColor = e.target.id;
-            document.body.style.color = 'black';
-        }
-    })
-});
+colorButton.addEventListener('click', function() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    body.style.background = `rgb(${r},${g},${b})`;
+    body.style.color = 'white';
+})
 
+refreshButton.addEventListener('click', function() {
+    body.style.background = 'white';
+    body.style.color = 'black';
 
+})
