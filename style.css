@@ -42,4 +42,11 @@ body {
     transform: scale(0.9);
   }
 
+  .rgb {
+    font-family: 'poppins';
+    font-weight: 600;
+    margin-top: 20px;
+    color: black;
+  }
+
   
